@@ -3,7 +3,9 @@ const express = require( 'express' )
 const router = express.Router();
 router.use(express.json())
 const mongoose =  require('mongoose')
+const admin = require('../middleware/admin')
 
+const auth = require('../middleware/auth')
 
 router.get('/api/genre', async (req, res) => {
     const genre =  await Genre.find().sort('name')
@@ -46,8 +48,9 @@ router.put('/api/genre/:id' , async (req, res) =>{
    
 })
 
-router.delete('/api/genre/:id' , async (req , res) => {
+router.delete('/api/genre/:id', [auth,admin], async (req , res) => {
     const result = await Genre.deleteOne({_id:req.params.id})
+    res.send(result)
 } ) 
 
 

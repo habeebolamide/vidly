@@ -20,6 +20,7 @@ The Vidly Movie Rental API is a RESTful web service built with Node.js that allo
 - bcrypt for password hashing
 
 ## Getting Started
+nodemon index.js
 
 ### Prerequisites
 
@@ -31,4 +32,4 @@ The Vidly Movie Rental API is a RESTful web service built with Node.js that allo
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/vidly-api.git
+   git clone https://github.com/habeebolamide/vidly.git
